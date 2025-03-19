@@ -47,4 +47,4 @@ uvicorn==0.34.0
 websockets==15.0.1
 xyzservices==2025.1.0
 yarl==1.18.3
-TA-Lib==0.4.0
+TA-Lib==0.4.0 --only-binary :all:
