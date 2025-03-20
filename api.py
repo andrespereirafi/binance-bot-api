@@ -28,10 +28,11 @@ def analyze_market():
     df['market_trend'] = df['close'].diff().apply(lambda x: "Bullish" if x > 0 else "Bearish")
     
     # Extraer últimos valores
-    latest_data = df.iloc[-1][['timestamp', 'close', 'rsi', 'adx', 'market_trend']].to_dict()
-    return latest_data
+    latest_data = df.iloc[-1]
+    response_text = f"{latest_data['close']},{latest_data['rsi']},{latest_data['adx']},{latest_data['market_trend']}"
+    return response_text
 
 @app.get("/data")
 def get_data():
-    """Endpoint para enviar datos a TradingView"""
+    """Endpoint para enviar datos a TradingView en formato texto"""
     return analyze_market()
