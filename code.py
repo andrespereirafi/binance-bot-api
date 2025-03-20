@@ -92,4 +92,3 @@ p.scatter(df[df['order_block'] == "Bearish OB"]['timestamp'],
 show(p)
 
 # Mostrar señales detectadas
-
